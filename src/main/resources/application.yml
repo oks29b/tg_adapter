@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${DATASOURCE_URL:jdbc:postgresql://localhost:5432/rss}
+    username: ${DATASOURCE_USERNAME:rss}
+    password: ${DATASOURCE_PASSWORD:rss}
+#  liquibase:
+#    enabled: true
+#    change-log: classpath:changelog/db.changelog-master.yaml
+
+handlers: '{ "/start":"startHandler", 
+             "/search":"searchingNews",
+             "/help":"helpHandler" }'

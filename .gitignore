@@ -2,6 +2,7 @@
 *.class
 target
 build
+gradle*
 .gradle
 
 # Log file
@@ -31,3 +32,6 @@ replay_pid*
 
 #other
 !gradle/wrapper/gradle-wrapper.jar
+src/main/resources/config.properties
+
+
