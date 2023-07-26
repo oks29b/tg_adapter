@@ -4,9 +4,17 @@ spring:
     url: ${DATASOURCE_URL:jdbc:postgresql://localhost:5432/rss}
     username: ${DATASOURCE_USERNAME:rss}
     password: ${DATASOURCE_PASSWORD:rss}
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      auto-offset-reset: earliest
 #  liquibase:
 #    enabled: true
 #    change-log: classpath:changelog/db.changelog-master.yaml
+# host.docker.internal:29092,host.docker.internal:29093 for kafka
 
 handlers: '{ "/start":"startHandler", 
              "/search":"searchingNews",
